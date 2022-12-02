@@ -22,6 +22,11 @@ public class ReviewerController {
     @Autowired
     private ReviewerRepository reviewerRepository;
 
+    @GetMapping("/")
+    public List<Reviewer> getReviewers() {
+        return reviewerRepository.findAll();
+    }
+
     // get all reviewers api
     @GetMapping("/reviewers")
     public List<Reviewer> getAllReviewers() {
